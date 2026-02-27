@@ -1,0 +1,69 @@
+{
+  "info": {
+    "name": "Demo ORM Reports",
+    "description": "Collection to test unoptimized and optimized CSV reports",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Sales Reports",
+      "item": [
+        {
+          "name": "Unoptimized CSV Report",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/csv"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/sales/reports/unoptimized.csv",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "sales",
+                "reports",
+                "unoptimized.csv"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Optimized CSV Report (Streaming)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/csv"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/sales/reports/optimized.csv",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "sales",
+                "reports",
+                "optimized.csv"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
